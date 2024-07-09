@@ -1,0 +1,32 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "./components/button.astro";
+
+interface MenuItem {
+	label: string;
+	url: string;
+
+	type?: "primary" | "secondary";
+}
+
+interface Props {
+	menu: MenuItem[];
+}
+
+const { menu } = Astro.props;
+---
+
+<header class="h-20 border-b-primary-950 border-b border-opacity-20 px-24">
+	<section
+		class="max-w-screen-xl flex items-center justify-between h-full w-full mx-auto"
+	>
+		<Icon name="logo-full" class="h-10 w-max" />
+		<div class="flex gap-6">
+			{
+				menu.map((item) => (
+					<Button {...item}>{item.label}</Button>
+				))
+			}
+		</div>
+	</section>
+</header>

@@ -1,0 +1,21 @@
+---
+import { cn } from "@/utils/cn";
+interface Props {
+	href?: string;
+
+	type?: "primary" | "secondary";
+}
+
+const { href, type = "primary" } = Astro.props;
+---
+
+<a
+	class={cn(
+		"px-5 h-10 rounded flex items-center hover:bg-primary-800 hover:bg-opacity-20 transition text-primary-950 cursor-pointer",
+		type === "secondary" &&
+			"border-primary-950 border hover:bg-opacity-100 hover:bg-primary-950 hover:text-white hover:border-transparent",
+	)}
+	href={href}
+>
+	<slot />
+</a>

@@ -1,0 +1,41 @@
+---
+import "@fontsource/rubik";
+import Header from "./header.astro";
+
+interface Props {
+	title?: string;
+}
+
+interface MenuItem {
+	label: string;
+	url: string;
+
+	type?: "primary" | "secondary";
+}
+
+const menu: MenuItem[] = [
+	{ label: "About Us", url: "#about" },
+	{ label: "Business", url: "#business" },
+	{ label: "People", url: "#people" },
+	{ label: "Impact", url: "#impact" },
+	{ label: "Contact us", url: "#contact-us", type: "secondary" },
+];
+
+const { title = "IranApply" } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Header menu={menu} />
+		<section class="max-w-screen-xl mx-auto">
+			<slot />
+		</section>
+	</body>
+</html>
