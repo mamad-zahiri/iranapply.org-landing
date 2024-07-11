@@ -1,0 +1,62 @@
+---
+import HeroImage from "@/assets/hero-image.png";
+---
+
+<style>
+	.s-caption-decoration {
+		&::after {
+			position: absolute;
+			content: "";
+			@apply h-0.5 w-4 bg-current;
+			left: -15px;
+			top: 0.5em;
+			transform: translate(-100%);
+		}
+	}
+</style>
+
+<h1
+	class="uppercase flex flex-col text-[min(5vw,91px)] text-primary-950 pt-20 ml-auto w-max tracking-tight leading-[1.1em] pr-4 xl:pr-0"
+>
+	<span>the path to</span>
+	<span class="pl-[3em]"
+		><span
+			class="text-primary-600 hover:text-primary-400 transition"
+			>educational</span
+		> success</span
+	>
+	<span class="pl-[1.5em]">begins with us</span>
+</h1>
+<!-- <h1 -->
+<!-- 	class="uppercase flex flex-col text-[91px] leading-[108px] text-primary-950 pt-20 ml-auto w-max tracking-tight" -->
+<!-- > -->
+<!-- 	<span>the path to</span> -->
+<!-- 	<span class="pl-64" -->
+<!-- 		><span class="text-primary-600">educational</span> success</span -->
+<!-- 	> -->
+<!-- 	<span class="pl-32">begins with us</span> -->
+<!-- </h1> -->
+<section class="w-full pl-32 h-[771px] pt-14">
+	<figure
+		class="ml-auto relative w-full h-full rounded-lg overflow-hidden flex flex-col pl-20 pb-20 rounded-r-none xl:rounded-r-lg"
+	>
+		<img
+			src={HeroImage.src}
+			alt="seminar"
+			class="absolute w-full h-full inset-0 object-cover"
+		/>
+		<div
+			class="absolute inset-0 from-transparent to-black opacity-75 bg-gradient-to-b to-70%"
+		>
+		</div>
+		<div class="absolute inset-0 bg-primary-950 bg-opacity-30">
+		</div>
+		<figcaption
+			class="s-caption-decoration relative text-primary-100 text-4xl mt-auto max-w-[635px]"
+		>
+			We are cinnutted to helping our clients achieve their
+			financialoald throught expert advice, innovative
+			solutions, and unparalleled execution.
+		</figcaption>
+	</figure>
+</section>

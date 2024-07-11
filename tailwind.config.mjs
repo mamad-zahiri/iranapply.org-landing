@@ -1,4 +1,5 @@
 import defaultTheme from "tailwindcss/defaultTheme";
+import plugin from "tailwindcss/plugin";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -10,16 +11,15 @@ export default {
       },
       colors: {
         primary: {
-          50: "#e9fcff",
-          100: "#cef7ff",
-          200: "#a7f3ff",
-          300: "#6bf0ff",
-          400: "#26e1ff",
-          500: "#00beff",
-          600: "#0094ff",
-          700: "#0079ff",
-          800: "#0068e6",
-          900: "#005cb3",
+          100: "#ffffff",
+          200: "#e3e9ef",
+          300: "#c6d3df",
+          400: "#aabecf",
+          500: "#8ea8bf",
+          600: "#7192af",
+          700: "#557c9f",
+          800: "#39678f",
+          900: "#1c517f",
           950: "#003b6f",
         },
       },
@@ -28,5 +28,14 @@ export default {
       xl: "1440px",
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".bg-test": {
+          background:
+            "repeating-conic-gradient(#808080 0% 25%, transparent 0% 50%) 50% / 20px 20px",
+        },
+      });
+    }),
+  ],
 };
