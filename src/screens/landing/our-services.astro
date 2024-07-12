@@ -1,0 +1,38 @@
+---
+import ServiceCard from "./components/service-card.astro";
+
+const services = [
+	{
+		icon: "message",
+		title: "Free Consulting",
+		description:
+			"Your company can save up to 60% of payroll costs woth our starfin solutions model. These savings position your business for long-term financial resilience.",
+	},
+	{
+		icon: "people",
+		title: "Communication with agents",
+		description:
+			"Your company can save up to 60% of payroll costs woth our starfin solutions model. These savings position your business for long-term financial resilience.",
+	},
+	{
+		icon: "cap",
+		title: "University Descriptions",
+		description:
+			"Your company can save up to 60% of payroll costs woth our starfin solutions model. These savings position your business for long-term financial resilience.",
+	},
+	{
+		icon: "chart",
+		title: "Realtime Apply status",
+		description:
+			"Your company can save up to 60% of payroll costs woth our starfin solutions model. These savings position your business for long-term financial resilience.",
+	},
+];
+---
+
+<section class="pt-32 text-primary-950">
+	<h2 class="pb-32 text-7xl text-center">Our Services</h2>
+
+	<ul class="grid grid-cols-2 gap-9 max-w-[1170px] mx-auto px-8">
+		{services.map((service) => <ServiceCard {...service} />)}
+	</ul>
+</section>

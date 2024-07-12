@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+	icon: string;
+	title: string;
+	description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<li
+	class="flex gap-4 text-primary-950 flex-col p-10 rounded-xl shadow-[0_4px_48px_0] transition hover:shadow duration-500 hover:shadow-primary-300 shadow-primary-300 hover:scale-95"
+>
+	<Icon name={icon} class="w-16 h-16" />
+	<h3 class="pt-3 font-semibold text-2xl">{title}</h3>
+	<p class="text-primary-500">{description}</p>
+</li>
