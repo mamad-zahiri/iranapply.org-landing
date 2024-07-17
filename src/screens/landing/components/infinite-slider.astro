@@ -1,0 +1,68 @@
+---
+export interface Slide {
+	image: string;
+	url: string;
+}
+interface Props {
+	slides: Slide[];
+}
+const { slides } = Astro.props;
+---
+
+<style>
+	@keyframes infinite-slider {
+		0% {
+			transform: translateX(0%);
+		}
+		100% {
+			transform: translateX(-50%);
+		}
+	}
+
+	.s-slider__items {
+		animation: infinite-slider linear infinite 10s;
+	}
+	.test {
+		mask-image: linear-gradient(
+			to right,
+			transparent,
+			black theme(spacing.20),
+			black calc(100% - theme(spacing.20)),
+			transparent
+		);
+		mask-mode: xor;
+	}
+</style>
+<section class="pt-36">
+	<h2
+		class="pb-20 text-7xl text-primary-950 text-center w-[645px] mx-auto"
+	>
+		Apply to top Iranian Universities
+	</h2>
+	<div
+		class="h-80 w-full bg-primary-200 xl:rounded-xl p-8 xl:border-primary-950 xl:border-2"
+	>
+		<div
+			class="test rounded h-full w-full overflow-hidden relative"
+		>
+			<div class="s-slider__items absolute flex gap-8 h-full">
+				{
+					slides.map((slide, index) => (
+						<div class="h-full aspect-square bg-primary-100 bg-opacity-70 rounded flex justify-center items-center">
+							<img
+								src={
+									import.meta
+										.env
+										.BASE_URL +
+									slide.image
+								}
+								class="w-36 h-36 object-cover"
+							/>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>
+

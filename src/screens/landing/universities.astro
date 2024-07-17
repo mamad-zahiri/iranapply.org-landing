@@ -1,0 +1,9 @@
+---
+import InfiniteSlider, { type Slide } from "./components/infinite-slider.astro";
+const universities: Slide[] = Array(20).fill({
+	image: "/images/universities/sharif.png",
+	url: "#",
+});
+---
+
+<InfiniteSlider slides={universities} />
