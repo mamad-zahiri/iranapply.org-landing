@@ -1,5 +1,6 @@
 ---
 import HeroImage from "@/assets/hero-image.png";
+import { Image } from "astro:assets";
 ---
 
 <style>
@@ -40,8 +41,9 @@ import HeroImage from "@/assets/hero-image.png";
 	<figure
 		class="ml-auto relative w-full h-full rounded-lg overflow-hidden flex flex-col pl-20 pb-20 rounded-r-none xl:rounded-r-lg"
 	>
-		<img
-			src={HeroImage.src}
+		<Image
+			src={HeroImage}
+			loading="eager"
 			alt="seminar"
 			class="absolute w-full h-full inset-0 object-cover"
 		/>
