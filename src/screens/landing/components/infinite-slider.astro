@@ -58,7 +58,7 @@ const { slides } = Astro.props;
 	>
 		<div class="s-slider__items absolute flex gap-8 h-full">
 			{
-				slides.map((slide, index) => (
+				slides.map((slide, _index) => (
 					<div class="h-full aspect-square bg-primary-100 bg-opacity-70 rounded flex justify-center items-center">
 						<img
 							src={

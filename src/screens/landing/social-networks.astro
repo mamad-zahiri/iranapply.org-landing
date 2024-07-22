@@ -1,0 +1,81 @@
+---
+import { cn } from "@/utils/cn";
+import { Icon } from "astro-icon/components";
+const social_networks = [
+	{
+		name: "instagram",
+		title: "Follow us on instagram",
+		icon: "instagram",
+		url: "#",
+		className: "s-instagram",
+	},
+	{
+		name: "whatsapp",
+		title: "Start a discussion",
+		icon: "whatsapp",
+		url: "#",
+		className: "s-whatsapp",
+	},
+	{
+		name: "linkedin",
+		title: "Connect on Linkedin",
+		icon: "linkedin",
+		url: "#",
+		className: "s-linkedin",
+	},
+	{
+		name: "email",
+		title: "Send us an email",
+		icon: "email",
+		url: "#",
+		className: "s-email pl-5",
+	},
+];
+---
+
+<style>
+	.s-instagram {
+		background: linear-gradient(
+			73deg,
+			#4c68d7,
+			#cd486b,
+			#fbad50,
+			#fccfcc
+		);
+	}
+	.s-whatsapp {
+		background: #25d366;
+	}
+	.s-linkedin {
+		background: #0e76a8;
+	}
+	.s-email {
+		background: #0064b0;
+	}
+</style>
+
+<section class="pt-52">
+	<h2 class="text-7xl text-primary-950 text-center">Social Networks</h2>
+	<ul class="grid grid-cols-2 gap-8 pt-28 max-w-5xl mx-auto">
+		{
+			social_networks.map((network) => (
+				<li>
+					<a
+						href={network.url}
+						class={cn(
+							"bg-primary-600 rounded-lg h-24 w-full flex items-center gap-10 px-4 text-2xl text-white hover:shadow-lg transition hover:-translate-y-1 active:translate-y-1 active:shadow-none",
+							network.className,
+						)}
+					>
+						<Icon
+							name={network.icon}
+							class="w-14 h-14"
+							aria-hidden
+						/>
+						{network.title}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>
