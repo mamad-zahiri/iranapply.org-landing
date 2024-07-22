@@ -1,6 +1,7 @@
 ---
 import "@fontsource/rubik";
 import Header from "./header.astro";
+import Footer from "./footer.astro";
 
 interface Props {
 	title?: string;
@@ -36,10 +37,13 @@ const { title = "IranApply" } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-primary-200">
 		<Header menu={menu} />
-		<section class="max-w-screen-xl mx-auto pb-14">
-			<slot />
-		</section>
+		<div class="bg-white">
+			<section class="max-w-screen-xl mx-auto pb-14">
+				<slot />
+			</section>
+		</div>
+		<Footer />
 	</body>
 </html>
