@@ -3,7 +3,15 @@ import InfiniteSlider, { type Slide } from "./components/infinite-slider.astro";
 const universities: Slide[] = Array(20).fill({
 	image: "/images/universities/sharif.png",
 	url: "#",
+	name: "sharif",
 });
 ---
 
-<InfiniteSlider slides={universities} />
+<section class="pt-36">
+	<h2
+		class="pb-20 text-7xl text-primary-950 text-center w-[645px] mx-auto"
+	>
+		Apply to top Iranian Universities
+	</h2>
+	<InfiniteSlider slides={universities} />
+</section>

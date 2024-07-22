@@ -1,6 +1,7 @@
 ---
 export interface Slide {
 	image: string;
+	name: string;
 	url: string;
 }
 interface Props {
@@ -22,7 +23,7 @@ const { slides } = Astro.props;
 	.s-slider__items {
 		animation: infinite-slider linear infinite 10s;
 	}
-	.test {
+	.s-slider__container {
 		mask-image: linear-gradient(
 			to right,
 			transparent,
@@ -32,37 +33,46 @@ const { slides } = Astro.props;
 		);
 		mask-mode: xor;
 	}
+	.s-sr-only {
+		position: absolute;
+		left: -10000px;
+		top: auto;
+		overflow: hidden;
+	}
 </style>
-<section class="pt-36">
-	<h2
-		class="pb-20 text-7xl text-primary-950 text-center w-[645px] mx-auto"
-	>
-		Apply to top Iranian Universities
-	</h2>
+<ul class="s-sr-only">
+	{
+		slides.map((slide) => (
+			<li>
+				<a href={slide.url}>{slide.name}</a>
+			</li>
+		))
+	}
+</ul>
+<div
+	aria-hidden="true"
+	class="h-80 w-full bg-primary-200 xl:rounded-xl p-8 xl:border-primary-950 xl:border-2"
+>
 	<div
-		class="h-80 w-full bg-primary-200 xl:rounded-xl p-8 xl:border-primary-950 xl:border-2"
+		class="s-slider__container rounded h-full w-full overflow-hidden relative"
 	>
-		<div
-			class="test rounded h-full w-full overflow-hidden relative"
-		>
-			<div class="s-slider__items absolute flex gap-8 h-full">
-				{
-					slides.map((slide, index) => (
-						<div class="h-full aspect-square bg-primary-100 bg-opacity-70 rounded flex justify-center items-center">
-							<img
-								src={
-									import.meta
-										.env
-										.BASE_URL +
-									slide.image
-								}
-								class="w-36 h-36 object-cover"
-							/>
-						</div>
-					))
-				}
-			</div>
+		<div class="s-slider__items absolute flex gap-8 h-full">
+			{
+				slides.map((slide, index) => (
+					<div class="h-full aspect-square bg-primary-100 bg-opacity-70 rounded flex justify-center items-center">
+						<img
+							src={
+								import.meta.env
+									.BASE_URL +
+								slide.image
+							}
+							alt={slide.name}
+							aria-label={slide.name}
+							class="w-36 h-36 object-cover"
+						/>
+					</div>
+				))
+			}
 		</div>
 	</div>
-</section>
-
+</div>
