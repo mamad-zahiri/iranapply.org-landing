@@ -15,6 +15,7 @@
     "@fontsource/rubik": "^5.0.20",
     "astro": "^4.12.2",
     "astro-icon": "^1.1.0",
+    "astro-seo": "^0.8.4",
     "clsx": "^2.1.1",
     "node-html-parser": "^6.1.13",
     "tailwind-merge": "^2.4.0",

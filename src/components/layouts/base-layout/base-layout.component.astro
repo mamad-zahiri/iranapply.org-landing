@@ -2,6 +2,7 @@
 import "@fontsource/rubik";
 import Header from "./header.astro";
 import Footer from "./footer.astro";
+import { SEO } from "astro-seo";
 
 interface Props {
 	title?: string;
@@ -27,6 +28,20 @@ const { title = "IranApply" } = Astro.props;
 
 <html lang="en">
 	<head>
+		<SEO
+			title="IranApply"
+			description="Path to educational success begins with IranApply, Apply now."
+			openGraph={{
+				basic: {
+					title: "Path to educational success begins with IranApply, Apply now.",
+					type: "website",
+					image:
+						import.meta.env.BASE_URL +
+						"/favicon.svg",
+				},
+			}}
+			}
+		/>
 		<meta charset="utf-8" />
 		<link
 			rel="icon"
