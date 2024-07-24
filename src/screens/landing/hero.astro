@@ -17,7 +17,7 @@ import { Image } from "astro:assets";
 </style>
 
 <h1
-	class="uppercase flex flex-col text-[min(5vw,91px)] text-primary-950 pt-20 ml-auto w-max tracking-tight leading-[1.1em] pr-8 xl:pr-0"
+	class="uppercase flex flex-col text-[min(5vw,91px)] text-primary-950 pt-10 md:pt-20 ml-auto w-max tracking-tight leading-[1.1em] pr-8 xl:pr-0"
 >
 	<span>The path to</span>
 	<span class="pl-[3em]"
@@ -37,9 +37,9 @@ import { Image } from "astro:assets";
 <!-- 	> -->
 <!-- 	<span class="pl-32">begins with us</span> -->
 <!-- </h1> -->
-<section class="w-full pl-32 h-[771px] pt-14">
+<section class="w-full pl-0 md:pl-32 h-96 md:h-[771px] pt-10 md:pt-14">
 	<figure
-		class="ml-auto relative w-full h-full rounded-lg overflow-hidden flex flex-col pl-20 pb-20 rounded-r-none xl:rounded-r-lg"
+		class="ml-auto relative w-full h-full md:rounded-lg overflow-hidden flex flex-col pl-12 pb-12 md:pl-20 md:pb-20 rounded-r-none xl:rounded-r-lg"
 	>
 		<Image
 			src={HeroImage}
@@ -54,7 +54,7 @@ import { Image } from "astro:assets";
 		<div class="absolute inset-0 bg-primary-950 bg-opacity-30">
 		</div>
 		<figcaption
-			class="s-caption-decoration relative text-primary-100 text-4xl mt-auto max-w-[635px]"
+			class="s-caption-decoration relative text-primary-100 text-lg md:text-2xl lg:text-4xl mt-auto max-w-[635px] px-2 md:px-0"
 		>
 			We are cinnutted to helping our clients achieve their
 			financialoald throught expert advice, innovative
