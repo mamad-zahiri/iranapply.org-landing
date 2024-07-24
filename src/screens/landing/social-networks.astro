@@ -54,22 +54,26 @@ const social_networks = [
 	}
 </style>
 
-<section class="pt-52">
-	<h2 class="text-7xl text-primary-950 text-center">Social Networks</h2>
-	<ul class="grid grid-cols-2 gap-8 pt-28 max-w-5xl mx-auto">
+<section class="pt-16 md:pt-24 lg:pt-52 px-4 md:px-8">
+	<h2 class="text-3xl lg:text-7xl text-primary-950 text-center">
+		Social Networks
+	</h2>
+	<ul
+		class="grid md:grid-cols-2 gap-4 md:gap-6 lg:gap-8 pt-12 lg:pt-28 max-w-5xl mx-auto"
+	>
 		{
 			social_networks.map((network) => (
 				<li>
 					<a
 						href={network.url}
 						class={cn(
-							"bg-primary-600 rounded-lg h-24 w-full flex items-center gap-10 px-4 text-2xl text-white hover:shadow-lg transition hover:-translate-y-1 active:translate-y-1 active:shadow-none",
+							"bg-primary-600 rounded-lg h-16 md:h-24 w-full flex items-center gap-4 md:gap-10 px-4 text-lg md:text-2xl text-white hover:shadow-lg transition hover:-translate-y-1 active:translate-y-1 active:shadow-none",
 							network.className,
 						)}
 					>
 						<Icon
 							name={network.icon}
-							class="w-14 h-14"
+							class="w-8 h-8 md:w-14 md:h-14"
 							aria-hidden
 						/>
 						{network.title}
