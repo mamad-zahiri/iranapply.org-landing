@@ -51,12 +51,14 @@ const { slides } = Astro.props;
 </ul>
 <div
 	aria-hidden="true"
-	class="h-80 w-full bg-primary-200 xl:rounded-xl p-8 xl:border-primary-950 xl:border-2"
+	class="h-40 md:h-60 lg:h-80 w-full bg-primary-200 xl:rounded-xl p-4 md:p-6 lg:p-8 xl:border-primary-950 xl:border-2"
 >
 	<div
 		class="s-slider__container rounded h-full w-full overflow-hidden relative"
 	>
-		<div class="s-slider__items absolute flex gap-8 h-full">
+		<div
+			class="s-slider__items absolute flex gap-4 md:gap-6 lg:gap-8 h-full"
+		>
 			{
 				slides.map((slide, _index) => (
 					<div class="h-full aspect-square bg-primary-100 bg-opacity-70 rounded flex justify-center items-center">
@@ -68,7 +70,7 @@ const { slides } = Astro.props;
 							}
 							alt={slide.name}
 							aria-label={slide.name}
-							class="w-36 h-36 object-cover"
+							class="h-2/3 aspect-square object-cover"
 						/>
 					</div>
 				))
