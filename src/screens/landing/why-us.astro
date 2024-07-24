@@ -30,10 +30,45 @@ interface Props {}
 			transparent
 		);
 	}
+	@media (max-width: theme(screens.md)) {
+		.s-decoration-line-vertical--half {
+			background-image: linear-gradient(
+				to bottom,
+				transparent,
+				theme(colors.primary.600)
+					calc(100% - theme(spacing.8)),
+				transparent
+			);
+		}
+		.s-decoration-line-vertical--half-reverse {
+			background-image: linear-gradient(
+				to bottom,
+				transparent,
+				theme(colors.primary.600) theme(spacing.8),
+				transparent
+			);
+		}
+		.s-decoration-line-horizontal {
+			background-image: linear-gradient(
+				to left,
+				transparent,
+				theme(colors.primary.600) theme(spacing.8),
+				theme(colors.primary.600)
+					calc(100% - theme(spacing.16)),
+				transparent
+			);
+		}
+	}
 </style>
 
-<section class="flex flex-col items-center gap-11 text-primary-950 pt-40 px-8">
-	<h2 class="flex items-center text-7xl gap-6">
+<!-- <section class="pt-12 md:pt-24 lg:pt-32 text-primary-950"> -->
+<!-- 	<h2 class="pb-12 md:pb-24 lg:pb-32 text-3xl lg:text-7xl text-center"> -->
+<!-- 		Our Services -->
+<!-- 	</h2> -->
+<section
+	class="flex flex-col items-center gap-11 text-primary-950 pt-16 md:pt-32 lg:pt-40 px-6 md:px-8"
+>
+	<h2 class="flex items-center text-3xl lg:text-7xl gap-2 lg:gap-6">
 		Why <Icon
 			title="IranApply"
 			aria-label="IranApply"
@@ -42,20 +77,22 @@ interface Props {}
 		/>
 	</h2>
 	<div
-		class="from-transparent to-transparent via-primary-600 h-[1px] w-[887px] bg-gradient-to-r mx-auto"
+		class="from-transparent to-transparent via-primary-600 h-[1px] w-full max-w-[887px] bg-gradient-to-r mx-auto"
 	>
 	</div>
 	<div>
-		<section class="relative w-full px-20 pb-8">
-			<h2 class="text-5xl text-center">
+		<section class="relative w-full px-8 md:px-20 pb-8">
+			<h2 class="text-2xl lg:text-5xl text-center">
 				Traditional Problems
 			</h2>
-			<div class="w-full pt-20">
-				<h3 class="text-4xl text-primary-900">
+			<div class="w-full pt-12 md:pt-16 lg:pt-20">
+				<h3
+					class="text-xl lg:text-4xl text-primary-900"
+				>
 					Lack of information:
 				</h3>
 				<p
-					class="text-2xl text-primary-600 pt-6 pl-12 pb-8"
+					class="lg:text-2xl text-primary-600 pt-3 lg:pt-6 pl-6 md:pl-12 pb-8"
 				>
 					Lorem ipsum dolor sit amet, consectetur
 					adipiscing elit, sed do eiusmod tempor
@@ -63,38 +100,44 @@ interface Props {}
 					aliqua. Ut enim ad minim veniam.
 				</p>
 			</div>
-			<h3 class="text-4xl text-primary-900">
+			<h3 class="text-xl lg:text-4xl text-primary-900">
 				Poor communication:
 			</h3>
-			<p class="text-2xl text-primary-600 pt-6 pl-12 pb-8">
+			<p
+				class="lg:text-2xl text-primary-600 pt-3 lg:pt-6 pl-6 md:pl-12 pb-8"
+			>
 				Lorem ipsum dolor sit amet, consectetur
 				adipiscing elit, sed do eiusmod tempor
 				incididunt ut labore et dolore magna aliqua. Ut
 				enim ad minim veniam.
 			</p>
 			<div
-				class="s-decoration-line-vertical--half w-[1px] top-0 -bottom-8 mx-auto absolute left-0"
+				class="s-decoration-line-vertical--half w-[1px] top-0 -bottom-4 md:-bottom-8 mx-auto absolute left-0"
 			>
 			</div>
 			<div
-				class="s-decoration-line-horizontal h-[1px] absolute bottom-0 -left-8 -right-8 bg-gradient-to-r mx-auto"
+				class="s-decoration-line-horizontal h-[1px] absolute bottom-0 -left-4 md:-left-8 -right-4 md:-right-8 bg-gradient-to-r mx-auto"
 			>
 			</div>
 		</section>
-		<section class="relative w-full p-12">
+		<section class="relative w-full p-6 md:p-12">
 			<div
-				class="flex gap-12 text-primary-950 flex-col p-16 pt-12 rounded-xl shadow-[0_4px_48px_0] transition hover:shadow duration-500 hover:shadow-primary-200 shadow-primary-200 hover:scale-95"
+				class="flex gap-4 md:gap-8 lg:gap-12 text-primary-950 flex-col p-8 md:p-10 lg:p-16 pt-6 md:pt-8 lg:pt-12 rounded-lg md:rounded-xl shadow-[0_4px_48px_0] transition hover:shadow duration-500 hover:shadow-primary-200 shadow-primary-200 hover:scale-95"
 			>
-				<h2 class="flex text-5xl items-center mx-auto">
+				<h2
+					class="flex text-xl md:text-3xl lg:text-5xl items-center mx-auto"
+				>
 					<Icon
 						title="IranApply"
 						aria-label="IranApply"
 						name="logo-notext"
-						class="w-20 h-20"
+						class="w-10 h-10 md:w-12 md:h-12 lg:w-20 lg:h-20"
 					/>
 					Solution
 				</h2>
-				<p class="text-2xl text-primary-600 px-4">
+				<p
+					class="md:text-lg lg:text-2xl text-primary-600 px-2 lg:px-4"
+				>
 					Lorem ipsum dolor sit amet, consectetur
 					adipiscing elit, sed do eiusmod tempor
 					incididunt ut labore et dolore magna
@@ -106,7 +149,7 @@ interface Props {}
 				</p>
 			</div>
 			<div
-				class="s-decoration-line-vertical--half-reverse w-[1px] -top-8 bottom-0 mx-auto absolute right-0"
+				class="s-decoration-line-vertical--half-reverse w-[1px] -top-4 md:-top-8 bottom-0 mx-auto absolute right-0"
 			>
 			</div>
 		</section>
