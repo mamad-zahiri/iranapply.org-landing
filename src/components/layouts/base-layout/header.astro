@@ -32,6 +32,8 @@ const { menu } = Astro.props;
 				pointer-events: none;
 				visibility: hidden;
 				transform: translateY(10%);
+				overflow: overlay;
+				overflow-x: hidden;
 			}
 			&:checked ~ .s-hamburger-menu__items {
 				opacity: 1;
@@ -119,6 +121,7 @@ const { menu } = Astro.props;
 						<Button
 							type={item.type}
 							href={item.url}
+							class="flex-shrink-0"
 						>
 							{item.label}
 						</Button>
