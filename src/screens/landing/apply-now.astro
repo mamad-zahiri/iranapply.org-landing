@@ -5,9 +5,9 @@ import { Icon } from "astro-icon/components";
 import ApplyNowImage from "@/assets/apply-now.png";
 ---
 
-<div class="pt-44">
+<div class="pt-6 md:pt-24 lg:pt-44 px-6 md:px-16">
 	<section
-		class="relative w-[1024px] aspect-video mx-auto overflow-hidden rounded-lg p-16"
+		class="relative max-w-screen-lg min-h-max w-full md:aspect-video mx-auto overflow-hidden rounded-lg p-10 lg:p-16"
 	>
 		<Image
 			src={ApplyNowImage}
@@ -27,16 +27,20 @@ import ApplyNowImage from "@/assets/apply-now.png";
 		/>
 
 		<div
-			class="relative text-white h-full mix-blend-screen flex items-center flex-col justify-between"
+			class="relative text-white h-full mix-blend-screen flex items-center flex-col justify-between gap-8"
 		>
-			<h2 class="text-7xl font-semibold">Ready to Apply?</h2>
-			<p class="text-opacity-80 text-3xl px-32">
+			<h2 class="text-3xl lg:text-7xl font-semibold">
+				Ready to Apply?
+			</h2>
+			<p
+				class="text-opacity-80 text-xl lg:text-3xl px-4 md:px-24 lg:px-32"
+			>
 				Lorem Ipsum is simply dummy text of the printing
 				and typesetting industry. Lorem Ipsum h
 			</p>
 			<Button
 				type="secondary"
-				class="border-current text-current hover:text-black hover:bg-white hover:mix-blend-screen text-3xl w-full h-24 border-2 flex justify-center items-center"
+				class="border-current text-current hover:text-black hover:bg-white hover:mix-blend-screen text-xl lg:text-3xl w-full h-16 lg:h-24 border-2 flex justify-center items-center flex-shrink-0"
 				href="#"
 			>
 				Apply now
